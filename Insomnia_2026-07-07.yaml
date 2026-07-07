@@ -1,0 +1,828 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Cantina API
+meta:
+  id: wrk_a53de1c1d2504689a722c2a9aa4862de
+  created: 1783390054907
+  modified: 1783463493706
+  description: ""
+collection:
+  - url: http://localhost:3000/api/auth/registro
+    name: Cadastro de usuário
+    meta:
+      id: req_7f299aaec75f43ec94c514254d895cda
+      created: 1783463984630
+      modified: 1783464645987
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984630
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nomeCompleto": "João da Silva",
+          "email": "joaoo@email.com",
+          "senha": "1234567"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/auth/login
+    name: Login do usuário
+    meta:
+      id: req_de966021d7e64ed38101a8b2608891a4
+      created: 1783464247294
+      modified: 1783464908916
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984530
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "joaoo@email.com",
+          "senha": "1234567"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/categorias
+    name: Cadastro de categoria
+    meta:
+      id: req_76f6e5b469454dc58982f8d1e56840cf
+      created: 1783464868998
+      modified: 1783465162548
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984430
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Refri",
+          "descricao": "Refrigerantes e sucos"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/categorias
+    name: Listagem de categorias
+    meta:
+      id: req_7353f84fe54b4d3a9e249d8d9bfab280
+      created: 1783465023548
+      modified: 1783465074887
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984380
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/categorias/1
+    name: Busca de categoria por ID
+    meta:
+      id: req_6b33c256baa84f3faf84e87f84a4d499
+      created: 1783465200277
+      modified: 1783465224880
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984330
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/categorias/1
+    name: Atualização de categoria
+    meta:
+      id: req_d827390f8f92424eab0d2eeab5513a3e
+      created: 1783465251687
+      modified: 1783465285305
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984280
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Bebidas Geladas",
+          "descricao": "Produtos refrigerados"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/fornecedores
+    name: Cadastro de fornecedor
+    meta:
+      id: req_71e55f398b764d149c632b7332c76253
+      created: 1783465305994
+      modified: 1783465329282
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984230
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "cnpj": "12.345.678/0001-99",
+          "nome": "Fornecedor ABC",
+          "telefone": "(11)99999-9999"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/fornecedores
+    name: Listagem de fornecedores
+    meta:
+      id: req_5520897a19764df798f7fb025725e38d
+      created: 1783465347461
+      modified: 1783465369907
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984180
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/produtos
+    name: Cadastro de produto
+    meta:
+      id: req_9145a8225b4a441a929312e7ba317966
+      created: 1783465386892
+      modified: 1783465404027
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984130
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Coca-Cola Lata",
+          "categoriaId": 1,
+          "fornecedorId": 1,
+          "preco": 6.50,
+          "estoque": 50
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/produtos
+    name: Listagem de produtos
+    meta:
+      id: req_53aba700a8264064b4c137bee1fbd150
+      created: 1783465423829
+      modified: 1783465445653
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984080
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/produtos/1
+    name: Busca de produto por ID
+    meta:
+      id: req_a75968a8c05540b4babe97dd4cfdae44
+      created: 1783465456844
+      modified: 1783465478383
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984030
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/produtos/1
+    name: Atualização de produto
+    meta:
+      id: req_5dbb3a97ead34f8d95457df7696b9f2d
+      created: 1783465483630
+      modified: 1783465498998
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983980
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Coca-Cola Zero",
+          "preco": 7.00,
+          "estoque": 80
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/clientes
+    name: Cadastro de cliente
+    meta:
+      id: req_f85addfc3e8948879885890c57ab3d46
+      created: 1783465516119
+      modified: 1783465532775
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983930
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "matricula": "2024001",
+          "nome": "Maria Oliveira",
+          "email": "maria@email.com"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/clientes
+    name: Listagem de clientes
+    meta:
+      id: req_4c8e1031b83f41b6b56689dc40acb2cf
+      created: 1783465551852
+      modified: 1783465563393
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983880
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/contas
+    name: Cadastro de conta
+    meta:
+      id: req_e50edc9399d2463f876f55da0970b1f8
+      created: 1783465576476
+      modified: 1783465603535
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983830
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "codigo": "CONT001",
+          "clienteId": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/contas/1/deposito
+    name: Depósito em conta
+    meta:
+      id: req_9245801b0ff84b2ea5ebb191b9c36bd4
+      created: 1783465614268
+      modified: 1783465673245
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983780
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "valor": 100
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/contas/1
+    name: Consulta da conta
+    meta:
+      id: req_85b9c16f2a004c99975d0fd4e60cf3b8
+      created: 1783465647428
+      modified: 1783465695542
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983730
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/vendas
+    name: Cadastro de venda
+    meta:
+      id: req_7547f6dbdc124f49b0e14edfe0ab67ff
+      created: 1783465709949
+      modified: 1783465732443
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983680
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "clienteId": 1,
+          "itens": [
+            {
+              "produtoId": 1,
+              "quantidade": 2
+            }
+          ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/vendas
+    name: Listagem de vendas
+    meta:
+      id: req_8f43a265f8724cb2b3fbe51e45e7f75c
+      created: 1783465748712
+      modified: 1783465767516
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983630
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/vendas/1
+    name: Busca de venda por ID
+    meta:
+      id: req_31193bb878344f3d9c7f15d3cda21776
+      created: 1783465781284
+      modified: 1783465799402
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983580
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/auth/login
+    name: Teste de login inválido
+    meta:
+      id: req_eec578c5c2d3422cbe68fc0808ab007f
+      created: 1783465824485
+      modified: 1783465834836
+      isPrivate: false
+      description: ""
+      sortKey: -1783463984480
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "invalido@email.com",
+          "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/categorias
+    name: Teste de categoria sem nome
+    meta:
+      id: req_6341f5d9c4ea4c88b2ba485f922aec51
+      created: 1783465852684
+      modified: 1783465878341
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983530
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "descricao": "Teste"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/produtos
+    name: Teste de produto sem preço
+    meta:
+      id: req_fd91d6424ed14747826a2209d9bd3293
+      created: 1783465889429
+      modified: 1783465901375
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983480
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome": "Chocolate",
+          "categoriaId": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/clientes
+    name: Teste de cliente sem e-mail
+    meta:
+      id: req_5fb179725c5b4716a8ec4a5877df4a50
+      created: 1783465921758
+      modified: 1783465936610
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983430
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "matricula": "2024002",
+          "nome": "Pedro"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/contas/1/deposito
+    name: Teste de depósito inválido
+    meta:
+      id: req_1bb0bc4642e640be8d18bb67e303bc57
+      created: 1783465950752
+      modified: 1783465966633
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983380
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "valor": -10
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/vendas
+    name: Teste de venda sem itens
+    meta:
+      id: req_738afc3d625847ed9cd4c9fb839b8412
+      created: 1783465977928
+      modified: 1783466000603
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983330
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "clienteId": 1,
+          "itens": []
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/vendas
+    name: Teste de venda com estoque insuficiente
+    meta:
+      id: req_f6fec65dd94a4716baffb742c68c7f78
+      created: 1783466012149
+      modified: 1783466030424
+      isPrivate: false
+      description: ""
+      sortKey: -1783463983280
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "clienteId": 1,
+          "itens": [
+            {
+              "produtoId": 1,
+              "quantidade": 999
+            }
+          ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJqb2Fvb0BlbWFpbC5jb20iLCJpYXQiOjE3ODM0NjQ4MzIsImV4cCI6MTc4MzQ5MzYzMn0.gur39WKBGRjKAV3W7-qPcgkzf5NEHxFDPqLQpO7Nh9c
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7f20e060637c38448b47f8657cde4f83842a525c
+    created: 1783463493740
+    modified: 1783463493740
+environments:
+  name: Base Environment
+  meta:
+    id: env_7f20e060637c38448b47f8657cde4f83842a525c
+    created: 1783390054909
+    modified: 1783463493705
+    isPrivate: false

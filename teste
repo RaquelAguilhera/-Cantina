@@ -1,0 +1,281 @@
+# 1. Cadastro de usuário
+Resumo: Cria um novo usuário para acessar a API.
+
+POST /api/auth/registro
+{
+  "nomeCompleto": "João da Silva",
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+
+↓
+
+# 2. Login do usuário
+Resumo: Autentica o usuário e retorna o token JWT.
+
+POST /api/auth/login
+{
+  "email": "joao@email.com",
+  "senha": "123456"
+}n
+
+↓
+
+# 3. Cadastro de categoria
+Resumo: Cria uma nova categoria de produtos.
+
+POST /api/categorias
+{
+  "nome": "Bebidas",
+  "descricao": "Refrigerantes e sucos"
+}
+
+↓
+
+# 4. Listagem de categorias
+Resumo: Exibe todas as categorias cadastradas.
+
+GET /api/categorias
+{}
+
+↓
+
+# 5. Busca de categoria por ID
+Resumo: Consulta uma categoria específica.
+
+GET /api/categorias/1
+{}
+
+↓
+
+# 6. Atualização de categoria
+Resumo: Altera os dados de uma categoria.
+
+PUT /api/categorias/1
+{
+  "nome": "Bebidas Geladas",
+  "descricao": "Produtos refrigerados"
+}
+
+↓
+
+# 7. Cadastro de fornecedor
+Resumo: Registra um novo fornecedor.
+
+POST /api/fornecedores
+{
+  "cnpj": "12.345.678/0001-99",
+  "nome": "Fornecedor ABC",
+  "telefone": "(11)99999-9999"
+}
+
+↓
+
+# 8. Listagem de fornecedores
+Resumo: Exibe todos os fornecedores.
+
+GET /api/fornecedores
+{}
+
+↓
+
+# 9. Cadastro de produto
+Resumo: Adiciona um novo produto ao estoque.
+
+POST /api/produtos
+{
+  "nome": "Coca-Cola Lata",
+  "categoriaId": 1,
+  "fornecedorId": 1,
+  "preco": 6.50,
+  "estoque": 50
+}
+
+↓
+
+# 10. Listagem de produtos
+Resumo: Lista todos os produtos cadastrados.
+
+GET /api/produtos
+{}
+
+↓
+
+# 11. Busca de produto por ID
+Resumo: Consulta um produto específico.
+
+GET /api/produtos/1
+{}
+
+↓
+
+# 12. Atualização de produto
+Resumo: Modifica os dados de um produto.
+
+PUT /api/produtos/1
+{
+  "nome": "Coca-Cola Zero",
+  "preco": 7.00,
+  "estoque": 80
+}
+
+↓
+
+# 13. Cadastro de cliente
+Resumo: Registra um novo cliente.
+
+POST /api/clientes
+{
+  "matricula": "2024001",
+  "nome": "Maria Oliveira",
+  "email": "maria@email.com"
+}
+
+↓
+
+# 14. Listagem de clientes
+Resumo: Exibe todos os clientes cadastrados.
+
+GET /api/clientes
+{}
+
+↓
+
+# 15. Cadastro de conta
+Resumo: Cria uma conta vinculada ao cliente.
+
+POST /api/contas
+{
+  "codigo": "CONT001",
+  "clienteId": 1
+}
+
+↓
+
+# 16. Depósito em conta
+Resumo: Adiciona saldo à conta do cliente.
+
+POST /api/contas/1/deposito
+{
+  "valor": 100
+}
+
+↓
+
+# 17. Consulta da conta
+Resumo: Mostra os dados da conta e saldo.
+
+GET /api/contas/1
+{}
+
+↓
+
+# 18. Cadastro de venda
+Resumo: Realiza uma venda e desconta estoque e saldo.
+
+POST /api/vendas
+{
+  "clienteId": 1,
+  "itens": [
+    {
+      "produtoId": 1,
+      "quantidade": 2
+    }
+  ]
+}
+
+↓
+
+# 19. Listagem de vendas
+Resumo: Exibe todas as vendas realizadas.
+
+GET /api/vendas
+{}
+
+↓
+
+# 20. Busca de venda por ID
+Resumo: Consulta uma venda específica.
+
+GET /api/vendas/1
+{}
+
+↓
+
+# 21. Teste de login inválido
+Resumo: Valida erro para credenciais incorretas.
+
+POST /api/auth/login
+{
+  "email": "invalido@email.com",
+  "senha": "123456"
+}
+
+↓
+
+# 22. Teste de categoria sem nome
+Resumo: Valida campo obrigatório.
+
+POST /api/categorias
+{
+  "descricao": "Teste"
+}
+
+↓
+
+# 23. Teste de produto sem preço
+Resumo: Valida ausência do preço.
+
+POST /api/produtos
+{
+  "nome": "Chocolate",
+  "categoriaId": 1
+}
+
+↓
+
+# 24. Teste de cliente sem e-mail
+Resumo: Valida campo obrigatório de e-mail.
+
+POST /api/clientes
+{
+  "matricula": "2024002",
+  "nome": "Pedro"
+}
+
+↓
+
+# 25. Teste de depósito inválido
+Resumo: Impede depósitos com valor negativo.
+
+POST /api/contas/1/deposito
+{
+  "valor": -10
+}
+
+↓
+
+# 26. Teste de venda sem itens
+Resumo: Impede vendas vazias.
+
+POST /api/vendas
+{
+  "clienteId": 1,
+  "itens": []
+}
+
+↓
+
+# 27. Teste de venda com estoque insuficiente
+Resumo: Valida quantidade maior que o estoque.
+
+POST /api/vendas
+{
+  "clienteId": 1,
+  "itens": [
+    {
+      "produtoId": 1,
+      "quantidade": 999
+    }
+  ]
+}
